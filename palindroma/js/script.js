@@ -4,34 +4,23 @@
 // chiedo una parola al cliente
 let userWord = prompt('dimmi una parola');
 
-// creo un array e inserisco la parola dell'utente
-let userArray = [...userWord.split('')];
 // output 
-let reverseArray;
+let reversed = reverseWord(userWord);
 
-for (let i = userArray.lenght - 1; i >= 0; i--) {
-    reverseArray += [i];
-    console.log(reverseArray)
+console.log(reversed);
+
+if (userWord === reversed) {
+    alert('parola palindroma');
+} else {
+    alert('parola non palindroma');
 }
 
-// if (reverseWord === word) {
-//     alert('parola palindroma')
-// }
-
-
-
-// creo la funzione
-    // se la parola letta al contrario è uguale è true
-// function reverseArray (array, reverse, word) {
-//     let array;
-//     let reverse;
-//     let word;
-//     for (let i = array.lenght - 1; i >= 0; i--) {
-//         reverse += array;
-//     }
-//     if (array === word) {
-//         reverseArray = true;
-//     }
-
-// }
+// funzione riutilizzabile
+function reverseWord(word) {
+    let reverseWord = '';
+    for (let i = word.length - 1; i >= 0; i--) {
+        reverseWord += word[i];
+    }
+    return reverseWord;
+}
 

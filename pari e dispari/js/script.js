@@ -6,7 +6,16 @@
 
 // chiediamo pari o dispari
 let userChoise1 = prompt('pari o dispari?');
+
+while (userChoise1 !== 'pari' && userChoise1 !== 'dispari') {
+    userChoise1 = prompt('pari o dispari?');
+}
+
 let userChoise2 = parseInt(prompt('dimmi un numero'));
+
+while (userChoise2 < 1 || userChoise2 > 5) {
+    userChoise2 = parseInt(prompt('dimmi un numero'));
+}
 
 // applico funzione
 let finalNumber = sum(userChoise2);
@@ -34,7 +43,7 @@ if (eoNumber === userChoise1) {
 function sum(userNumber) {
     let sumNumber = 0;
     let pcNumber = parseInt(((Math.random() * 5) + 1).toFixed(0));
-    console.log(pcNumber + '(numero generato casualmente)')
+    console.log(pcNumber + ' (numero generato casualmente)')
     sumNumber = pcNumber + userNumber;
 
     return sumNumber;
